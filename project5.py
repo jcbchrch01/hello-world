@@ -1,15 +1,9 @@
-RateOfGrowth = int(input("Please enter the rate of growth (in hours): "))
-RogHours = int(input("Please enter the amount of hours it took to achieve "
-                     "the rate of growth: "))
-TotalHours = int(input("Please enter total hours of growth: "))
-Organism = int(input("Please enter the starting number of organisms: "))
+def isSorted(stuff):    
+    for i in range(1,len(stuff)):
+        if stuff[i - 1] > stuff[i]:
+           return False
+    return True
 
-Hours = 0
+numbers = [10, 2, 5, 9, 7, 3, 6]
 
-while (Hours <= TotalHours):
-    Organism *= RateOfGrowth
-    Hours += RogHours
-    if (Hours == TotalHours):
-        break
-
-print("The current total of the population is", Organism)
+print(isSorted(numbers))

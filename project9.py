@@ -1,8 +1,8 @@
-inputFile = input("Please enter the input file name: ")
-outputFile = input("Please enter the output file name: ")
+import functools
 
-with open(inputFile, 'r') as f, open(outputFile, 'w') as w:
-    number = 0
-    for line in f:
-        number  += 1
-        w.write('{:>4}> {}'.format(number, line))
+file = open("project9integers.txt", 'r')
+file = file.read()
+file = file.split()
+file = list(map(int, file))
+
+print(functools.reduce(lambda x, y: x + y / len(file), file, 0))
